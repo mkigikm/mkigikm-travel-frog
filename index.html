@@ -1,30 +1,74 @@
 <html>
   <header>
+    <title>Hello</title>
     <style>
+      .holder {
+          background-color: tan;
+          height: 100%;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          overflow: hidden;
+      }
+      .cover-box {
+          width: 250px;
+          height: 250px;
+          background-size: contain;
+      }
       .picture-box {
           width: 600px;
           height: 450px;
           background-color: white;
-          display: inline-block;
-          margin: 0 10px;
           border: 10px solid white;
           background-size: contain;
       }
+      .page {
+          background-color: cadetblue;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+      .picture {
+          background-size: contain;
+      }
     </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+            integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+            crossorigin="anonymous">
+    </script>
+    <script src="turn.min.js"></script>
   </header>
   <body style="padding: 0; margin: 0">
-    <div style="background-color: tan; height: 100%; width: 100%; padding: 20px">
-      <div>
-        <div class="picture-box" style="background-image: url(peter_pan.jpg)"></div>
-        <div class="picture-box" style="background-image: url(on_a_rock.jpg)"></div>
-      </div>
-      <div>
-        <div class="picture-box" style="background-image: url(hans.jpg)"></div>
-        <div class="picture-box" style="background-image: url(mouse.jpg)"></div>
-      </div>
-      <div>
-        <div class="picture-box" style="background-image: url(bears.jpg)"></div>
+    <div class="holder">
+      <div id="flipbook">
+        <div class="hard page">
+          <div class="cover-box" style="background-image: url(frog.png)"></div>
+        </div>
+	      <div class="page">
+          <div class="picture-box" style="background-image: url(peter_pan.jpg)"></div>
+        </div>
+	      <div class="page">
+          <div class="picture-box" style="background-image: url(on_a_rock.jpg)"></div>
+        </div>
+	      <div class="page">
+          <div class="picture-box" style="background-image: url(hans.jpg)"></div>          
+        </div>
+	      <div class="page">
+          <div class="picture-box" style="background-image: url(mouse.jpg)"></div>          
+        </div>
+	      <div class="page">
+          <div class="picture-box" style="background-image: url(bears.jpg)"></div>          
+        </div>
+	      <div class="hard"></div>
       </div>
     </div>
+    <script type="text/javascript">
+	    $("#flipbook").turn({
+		    width: 1500,
+		    height: 600,
+		    autoCenter: true
+	    });
+    </script>
   </body>
 </html>
